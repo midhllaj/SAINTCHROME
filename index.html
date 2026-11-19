@@ -1,0 +1,75 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <title>SAINTCHROME — Wear Your Halo.</title>
+  <meta name="description" content="SAINTCHROME: holy relics forged from liquid chrome, worn by modern saints. Bracelets, necklaces, eyewear and earphones, explorable in real-time 3D." />
+  <meta name="theme-color" content="#000000" />
+  <link rel="icon" type="image/png" sizes="64x64" href="/favicon.png" />
+  <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
+  <link rel="apple-touch-icon" href="/brand/apple-touch-icon.png" />
+  <link rel="canonical" href="https://saintchrome.vercel.app/" />
+
+  <!-- Open Graph / social -->
+  <meta property="og:type" content="website" />
+  <meta property="og:site_name" content="SAINTCHROME" />
+  <meta property="og:title" content="SAINTCHROME — Wear Your Halo." />
+  <meta property="og:description" content="Relics for the Modern Saint. Sacred metal, forged in liquid chrome." />
+  <meta property="og:image" content="/brand/og.jpg" />
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <meta name="twitter:card" content="summary_large_image" />
+  <meta name="twitter:title" content="SAINTCHROME — Wear Your Halo." />
+  <meta name="twitter:description" content="Relics for the Modern Saint. Sacred metal, forged in liquid chrome." />
+  <meta name="twitter:image" content="/brand/og.jpg" />
+  <link rel="preload" href="/brand/logo-preloader.webp" as="image" type="image/webp" />
+</head>
+<body class="is-loading">
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <!-- PRELOADER: halo draws itself, stars pop, counter 000 → 100, white flash, zoom through -->
+  <div id="preloader" aria-hidden="true">
+    <svg class="pre-halo" viewBox="-120 -120 240 240">
+      <defs>
+        <radialGradient id="pre-logo-fade">
+          <stop offset="0.72" stop-color="#fff" />
+          <stop offset="1" stop-color="#000" />
+        </radialGradient>
+        <mask id="pre-logo-mask"><circle r="72" fill="url(#pre-logo-fade)" /></mask>
+      </defs>
+      <!-- the SAINTCHROME emblem sits inside the halo; only the ring and stars spin -->
+      <g mask="url(#pre-logo-mask)"><image class="pre-logo" href="/brand/logo-preloader.webp" x="-70" y="-70" width="140" height="140" /></g>
+      <g class="pre-spin">
+        <circle class="pre-ring" r="78" />
+        <circle class="pre-ring pre-ring--thin" r="74" />
+        <g class="pre-stars"></g>
+      </g>
+    </svg>
+    <div class="pre-counter mono"><span class="pre-num">000</span></div>
+    <div class="pre-label mono">[ CONSECRATING RELICS ]</div>
+    <div class="pre-flash"></div>
+  </div>
+
+  <div class="space" aria-hidden="true"><canvas class="space__stars"></canvas></div>
+
+  <header class="hud" id="hud"></header>
+  <main id="main" tabindex="-1"></main>
+  <div id="drawer-root"></div>
+
+  <div class="transition" aria-hidden="true">
+    <div class="transition__ring"></div>
+    <div class="transition__flash"></div>
+  </div>
+  <canvas class="fx" aria-hidden="true"></canvas>
+  <div class="cursor" aria-hidden="true">
+    <svg class="cursor__star" viewBox="0 0 24 24"><path d="M12 0 L13.4 10.6 L24 12 L13.4 13.4 L12 24 L10.6 13.4 L0 12 L10.6 10.6 Z" /></svg>
+    <span class="cursor__label mono"></span>
+  </div>
+  <div class="grain" aria-hidden="true"></div>
+  <div class="vignette" aria-hidden="true"></div>
+  <div class="toast mono" role="status" aria-live="polite"></div>
+  <noscript><p style="color:#fff;padding:2rem;font-family:monospace">SAINTCHROME needs JavaScript for its 3D relics. ✦</p></noscript>
+  <script type="module" src="/src/main.js"></script>
+</body>
+</html>
