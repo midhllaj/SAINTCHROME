@@ -34,6 +34,7 @@ export function footerHTML() {
     <div class="footer__bottom mono">
       <span>© ${new Date().getFullYear()} SAINTCHROME</span>
       <span>FORGED IN LIQUID CHROME ✦ INDIA</span>
+      <a href="https://www.midhlaj.co" target="_blank" rel="noopener" class="footer__up">SITE BY MIDHLAJ</a>
       <a href="#main" class="footer__up" data-scroll-top>ASCEND ↑</a>
     </div>
   </footer>`;
